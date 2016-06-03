@@ -5,7 +5,9 @@ Tested on Windows 10 with Python 3.5.1
 import os
 
 fullcharname = input(str("Type in desired character name:"))  # grabs character name
-# charnamelen = len(fullcharname) TODO while for len exceeds character limiter
+while len(fullcharname) > 12:  # detects if name is longer than 12 characters
+    retry = input("Player name can only be 12 characters long, input a shorter one:")  # asks for a shorter one
+    fullcharname = retry  # sets the shorter one to name
 
 charnums = (fullcharname.translate(str.maketrans('ABCDEFGHIJKLMNOPQRSTUVWXYZ'
                                                  'abcdefghijklmnopqrstuvwxyz'
